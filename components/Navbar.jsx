@@ -54,13 +54,13 @@ export default function Navbar({ onOpenServicesMenu, onOpenEstimator }) {
         </nav>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={onOpenEstimator}
-            className="group relative px-6 py-2.5 rounded-full bg-cyan-500 text-slate-950 hover:bg-cyan-400 font-extrabold text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-2 shadow-lg shadow-cyan-500/25 hover:scale-105"
+            className="group relative px-3.5 py-2 sm:px-6 sm:py-2.5 rounded-full bg-cyan-500 text-slate-950 hover:bg-cyan-400 font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all duration-300 flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-cyan-500/25 hover:scale-105"
           >
             <span>Get In Touch</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
 
           <button

@@ -74,7 +74,7 @@ export default function ProjectEstimatorModal({ isOpen, onClose, initialService 
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="relative w-full max-w-3xl rounded-3xl bg-[#090b10] border border-white/15 p-6 sm:p-10 shadow-2xl shadow-black/90 space-y-8 animate-in fade-in zoom-in-95 duration-200 text-white overflow-hidden">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto my-auto rounded-2xl sm:rounded-3xl bg-[#090b10] border border-white/15 p-5 sm:p-10 shadow-2xl shadow-black/90 space-y-6 sm:space-y-8 animate-in fade-in zoom-in-95 duration-200 text-white">
         
         {/* Top Header Bar */}
         <div className="flex items-center justify-between border-b border-white/10 pb-6">

@@ -242,7 +242,7 @@ export default function Metallic3DModel({
       targetY = (e.clientY / innerHeight - 0.5) * 0.8;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
     // 10. Animation Loop
     let animationFrameId;

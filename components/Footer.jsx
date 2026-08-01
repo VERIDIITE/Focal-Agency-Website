@@ -13,20 +13,20 @@ export default function Footer({ onOpenEstimator }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-16 relative z-10">
 
         {/* Clean Link Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 pt-4">
           
           {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="sm:col-span-2 lg:col-span-2 space-y-4 sm:space-y-5">
             <FocalLogo showTagline={true} />
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed font-sans">
               Focal Studio is a boutique product design and software engineering practice served by senior engineering leads. We architect high-concurrency web platforms, native mobile applications, and investor-ready MVPs.
             </p>
             <div className="flex items-center gap-2 pt-1">
-              <span className="flex h-2 w-2 relative">
+              <span className="flex h-2 w-2 relative shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
+              <span className="text-[11px] sm:text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
                 Accepting Client Engagements for Q3/Q4 2026
               </span>
             </div>
@@ -81,9 +81,9 @@ export default function Footer({ onOpenEstimator }) {
         </div>
 
         {/* Bottom Legal & Meta Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-sans">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-sans text-center sm:text-left">
           <p>© 2026 Focal Studio. All rights reserved. Served by Focal Leads.</p>
-          <div className="flex items-center gap-6 font-mono text-[11px]">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-mono text-[11px]">
             <a href="#services" className="hover:text-slate-300 transition-colors">CAPABILITIES</a>
             <a href="#startups" className="hover:text-slate-300 transition-colors">STARTUPS</a>
             <button onClick={onOpenEstimator} className="hover:text-cyan-300 transition-colors uppercase font-bold text-cyan-400">GET IN TOUCH</button>

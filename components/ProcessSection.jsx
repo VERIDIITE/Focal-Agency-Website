@@ -102,27 +102,27 @@ export default function ProcessSection({ onOpenEstimator }) {
   const currentSteps = processSteps[activeTab] || processSteps['Launch'];
 
   return (
-    <section id="process" className="relative py-28 px-4 sm:px-8 bg-white text-slate-950 border-t border-slate-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+    <section id="process" className="relative py-12 sm:py-28 px-4 sm:px-8 bg-white text-slate-950 border-t border-slate-200 overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-16 relative z-10">
         
         {/* Header & Main Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* Left Sticky Sidebar */}
-          <ScrollReveal animation="slide-right" className="lg:col-span-4 space-y-8 flex flex-col justify-between">
-            <div className="space-y-6">
-              <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-500">
+          <ScrollReveal animation="slide-right" className="lg:col-span-4 space-y-6 sm:space-y-8 flex flex-col justify-start">
+            <div className="space-y-4 sm:space-y-6">
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-500">
                 HOW WE WORK • PROCESS
               </span>
-              <div className="space-y-2">
+              <div className="flex flex-wrap gap-2 lg:flex-col lg:gap-2 lg:space-y-1">
                 {tabs.map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`block text-left font-display font-bold text-2xl sm:text-3xl transition-all ${
+                    className={`px-4 py-2 lg:px-0 lg:py-1 rounded-xl lg:rounded-none text-left font-display font-bold text-base sm:text-3xl shrink-0 transition-all ${
                       activeTab === tab
-                        ? 'text-slate-950 translate-x-2'
-                        : 'text-slate-400 hover:text-slate-700'
+                        ? 'bg-slate-950 text-white shadow-md lg:shadow-none lg:bg-transparent lg:text-slate-950 lg:translate-x-2'
+                        : 'bg-slate-100 text-slate-600 lg:bg-transparent lg:text-slate-400 lg:hover:text-slate-700'
                     }`}
                   >
                     {tab}
@@ -130,33 +130,22 @@ export default function ProcessSection({ onOpenEstimator }) {
                 ))}
               </div>
             </div>
-
-            {/* Explore All CTA Button */}
-            <div>
-              <button
-                onClick={onOpenEstimator}
-                className="px-8 py-4 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center gap-2 transition-all hover:scale-105"
-              >
-                <span>EXPLORE ALL</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400" />
-              </button>
-            </div>
           </ScrollReveal>
 
           {/* Right Main Column */}
-          <div className="lg:col-span-8 space-y-10">
+          <div className="lg:col-span-8 space-y-6 sm:space-y-10">
             <ScrollReveal animation="fade-up">
-              <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-slate-950 tracking-tight leading-tight">
+              <h2 className="font-display font-extrabold text-2xl sm:text-5xl text-slate-950 tracking-tight leading-tight">
                 Launch your product & win early traction
               </h2>
             </ScrollReveal>
 
             {/* 4 Block Grid */}
-            <ScrollReveal animation="scale-up" stagger={true} className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-slate-200 pt-8">
+            <ScrollReveal animation="scale-up" stagger={true} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 border-t border-slate-200 pt-6 sm:pt-8">
               {currentSteps.map((step, idx) => (
-                <div key={idx} className="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 hover:border-cyan-500 transition-colors">
-                  <span className="font-mono text-sm font-bold text-slate-400">{step.num}</span>
-                  <h3 className="font-display font-bold text-xl text-slate-950">{step.title}</h3>
+                <div key={idx} className="p-5 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 sm:space-y-4 hover:border-cyan-500 transition-colors">
+                  <span className="font-mono text-xs sm:text-sm font-bold text-slate-400">{step.num}</span>
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-slate-950">{step.title}</h3>
                   <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
                 </div>
               ))}

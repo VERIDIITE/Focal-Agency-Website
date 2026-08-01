@@ -64,18 +64,18 @@ export default function ServicesSection({ onSelectService }) {
   const currentCategory = serviceCategories.find((c) => c.id === activeTab) || serviceCategories[0];
 
   return (
-    <section id="services" className="relative py-28 px-4 sm:px-8 bg-[#07090e] text-white border-t border-white/10 overflow-hidden">
+    <section id="services" className="relative py-12 sm:py-28 px-4 sm:px-8 bg-[#07090e] text-white border-t border-white/10 overflow-hidden">
       {/* Background Cyan Ambient Glow */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-16 relative z-10">
         
         {/* Header */}
-        <ScrollReveal animation="fade-up" className="space-y-3">
-          <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-slate-400">
+        <ScrollReveal animation="fade-up" className="space-y-2 sm:space-y-3">
+          <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-400">
             AGENCY CAPABILITIES • SERVED BY FOCAL
           </span>
-          <h2 className="font-display font-extrabold text-4xl sm:text-6xl tracking-tight text-white">
+          <h2 className="font-display font-extrabold text-2xl sm:text-5xl lg:text-6xl tracking-tight text-white">
             Capabilities & Services
           </h2>
         </ScrollReveal>
@@ -86,14 +86,14 @@ export default function ServicesSection({ onSelectService }) {
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`pb-5 text-left transition-all border-b-2 flex flex-col justify-between space-y-2 group ${
+              className={`pb-3 sm:pb-5 text-left transition-all border-b-2 flex flex-col justify-between space-y-1 sm:space-y-2 group ${
                 activeTab === cat.id
                   ? 'border-cyan-400 text-white'
                   : 'border-transparent text-slate-500 hover:text-slate-300'
               }`}
             >
-              <span className="font-mono text-xs font-bold">{cat.num}</span>
-              <span className="font-display font-extrabold text-xl sm:text-2xl group-hover:translate-x-1 transition-transform">
+              <span className="font-mono text-[10px] sm:text-xs font-bold">{cat.num}</span>
+              <span className="font-display font-extrabold text-base sm:text-2xl group-hover:translate-x-1 transition-transform">
                 {cat.title}
               </span>
             </button>
@@ -101,30 +101,30 @@ export default function ServicesSection({ onSelectService }) {
         </ScrollReveal>
 
         {/* Selected Category Content Grid */}
-        <div className="space-y-8 animate-in fade-in duration-300">
+        <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300">
           <div className="max-w-2xl space-y-2">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-md border border-cyan-500/20">
               {currentCategory.tag}
             </span>
-            <p className="text-sm text-slate-300 leading-relaxed font-sans pt-1">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans pt-1">
               {currentCategory.desc}
             </p>
           </div>
 
           {/* Clean Minimalist Services List */}
-          <ScrollReveal animation="scale-up" stagger={true} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ScrollReveal animation="scale-up" stagger={true} className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             {currentCategory.services.map((srv, idx) => (
               <div
                 key={idx}
                 onClick={() => onSelectService(srv.name)}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all cursor-pointer group flex flex-col justify-between space-y-4 backdrop-blur-md"
+                className="p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 hover:bg-white/10 transition-all cursor-pointer group flex flex-col justify-between space-y-3 sm:space-y-4 backdrop-blur-md"
               >
-                <div className="space-y-2">
+                <div className="space-y-1.5 sm:space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-slate-500">{(idx + 1).toString().padStart(2, '0')}</span>
-                    <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <span className="font-mono text-[10px] sm:text-xs font-bold text-slate-500">{(idx + 1).toString().padStart(2, '0')}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </div>
-                  <h4 className="font-display font-bold text-lg text-white group-hover:text-cyan-400 transition-colors">
+                  <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-cyan-400 transition-colors">
                     {srv.name}
                   </h4>
                   <p className="text-xs text-slate-400 leading-relaxed">
@@ -132,8 +132,8 @@ export default function ServicesSection({ onSelectService }) {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-xs font-semibold text-slate-400 group-hover:text-white">
-                  <Check className="w-3.5 h-3.5 text-cyan-400" />
+                <div className="pt-2 sm:pt-3 border-t border-white/5 flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-slate-400 group-hover:text-white">
+                  <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                   <span>Served by Focal Engineering</span>
                 </div>
               </div>

@@ -80,7 +80,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onSelectService, onO
     <div className="fixed inset-0 z-50 bg-[#07090e] text-slate-100 overflow-y-auto animate-in fade-in duration-200">
       
       {/* Top Header Navbar */}
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between border-b border-white/10">
         <FocalLogo showTagline={false} />
 
         <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
@@ -98,20 +98,20 @@ export default function ServicesMegaMenu({ isOpen, onClose, onSelectService, onO
             onClose();
             onOpenEstimator();
           }}
-          className="px-6 py-2.5 rounded-full bg-white text-slate-950 font-extrabold text-xs tracking-wider uppercase hover:bg-slate-200 transition-colors shadow-lg"
+          className="px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-white text-slate-950 font-extrabold text-xs tracking-wider uppercase hover:bg-slate-200 transition-colors shadow-lg"
         >
           Estimate Project
         </button>
       </div>
 
       {/* Sub-bar Controls */}
-      <div className="max-w-7xl mx-auto px-6 pt-6 flex items-center justify-between">
-        <div className="px-5 py-2 rounded-full border border-white/20 text-xs font-semibold text-white bg-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6 flex items-center justify-between">
+        <div className="px-4 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/20 text-[11px] sm:text-xs font-semibold text-white bg-white/5">
           All services • Served by Focal
         </div>
         <button
           onClick={onClose}
-          className="p-3 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
+          className="p-2.5 sm:p-3 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white border border-white/10 transition-colors"
           title="Close services menu"
         >
           <X className="w-5 h-5" />
@@ -119,13 +119,13 @@ export default function ServicesMegaMenu({ isOpen, onClose, onSelectService, onO
       </div>
 
       {/* Categorized Mega Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10">
         {categories.map((cat, idx) => (
-          <div key={idx} className="space-y-6">
-            <h3 className="font-display font-extrabold text-2xl text-white tracking-tight border-b border-white/10 pb-3">
+          <div key={idx} className="space-y-4 sm:space-y-6">
+            <h3 className="font-display font-extrabold text-xl sm:text-2xl text-white tracking-tight border-b border-white/10 pb-3">
               {cat.title}
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               {cat.items.map((item, itemIdx) => (
                 <li key={itemIdx}>
                   <button
@@ -133,7 +133,7 @@ export default function ServicesMegaMenu({ isOpen, onClose, onSelectService, onO
                       onClose();
                       onSelectService(item);
                     }}
-                    className="text-left text-sm font-medium text-slate-300 hover:text-white hover:translate-x-1.5 transition-all flex items-center justify-between w-full group"
+                    className="text-left text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:translate-x-1.5 transition-all flex items-center justify-between w-full group"
                   >
                     <span>{item}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-cyan-400 transition-opacity shrink-0 ml-1" />
@@ -146,20 +146,20 @@ export default function ServicesMegaMenu({ isOpen, onClose, onSelectService, onO
       </div>
 
       {/* Bottom CTA Banner */}
-      <div className="max-w-7xl mx-auto px-6 pb-12">
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-black border border-white/15 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <p className="font-display font-bold text-xl text-white">Have a specialized custom requirement?</p>
-            <p className="text-xs text-slate-400">Speak directly with Focal Studio engineering leads.</p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-8 sm:pb-12">
+        <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-slate-900 to-black border border-white/15 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6">
+          <div className="space-y-1 text-left">
+            <h4 className="font-display font-bold text-lg sm:text-xl text-white">Need custom enterprise engineering leadership?</h4>
+            <p className="text-xs text-slate-400">Our senior engineering leads will structure a dedicated team for your product.</p>
           </div>
           <button
             onClick={() => {
               onClose();
-              onOpenEstimator();
+              onOpenEstimator('Dedicated Enterprise Team');
             }}
-            className="px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:scale-105 transition-transform"
+            className="w-full md:w-auto px-8 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider transition-all text-center shrink-0 shadow-lg"
           >
-            Start Project Consultation →
+            TALK TO ENGINEERING →
           </button>
         </div>
       </div>
